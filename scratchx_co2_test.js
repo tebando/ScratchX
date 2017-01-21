@@ -20,6 +20,7 @@
 
     $.ajax({
             url:global_list[place],
+            type: 'POST',
             dataType:'jsonp',
             jsonpCallback:'co2',
             timeout:5000,
