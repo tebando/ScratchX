@@ -8,6 +8,7 @@
 
   var global_list = {
           "naruto":"http://www.naruto-u.ac.jp/facultystaff/naosone/sensors/co2.json",
+          "ip":"http://160.204.250.222/co2.json"
       };
 
   var global_key = new Array();
