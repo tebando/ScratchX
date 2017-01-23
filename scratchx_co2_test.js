@@ -25,7 +25,7 @@
             timeout:5000,
             success: function(data){
                         //console.log(data['co2']);
-                        callback(data['co2']);
+                        callback(data.co2);
                      },
             error : function(){
                         //console.log("error");
