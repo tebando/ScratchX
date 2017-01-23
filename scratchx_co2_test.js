@@ -21,8 +21,7 @@
 
     $.ajax({
             url:global_list[place],
-            dataType:'jsonp',
-            jsonpCallback:'co2',
+            dataType:'json',
             timeout:5000,
             success: function(data){
                         //console.log(data['co2']);
