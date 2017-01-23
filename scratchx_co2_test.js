@@ -24,14 +24,14 @@
             dataType:'json',
             timeout:5000,
             success: function(data){
-                        console.log("success");
-                        //callback(data.co2);
+                        //console.log("success");
+                        callback(data.co2);
                      },
             error : function(){
-                        console.log("error");
+                        //console.log("error");
                     },
             complete: function(data){
-                        console.log("complete");
+                        //console.log("complete");
                       }
     });
   };
