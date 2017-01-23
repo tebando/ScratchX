@@ -24,8 +24,8 @@
             dataType:'json',
             timeout:5000,
             success: function(data){
-                        console.log(JSON.stringify(data));
-                        callback(data.co2);
+                        console.log("success");
+                        //callback(data.co2);
                      },
             error : function(){
                         console.log("error");
