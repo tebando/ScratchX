@@ -30,6 +30,7 @@
       },
       error:function(){
         console.log("temp error");
+        callback("null");
       }
     });
   };
@@ -45,6 +46,7 @@
       },
       error:function(){
         console.log("humi error");
+        callback("null");
       }
     });
   };
@@ -60,6 +62,7 @@
       },
       error:function(){
         console.log("baro error");
+        callback("null");
       }
     });
   };
@@ -93,6 +96,7 @@
       },
       error:function(){
         console.log("acce error");
+        callback("null");
       }
     });
   };
@@ -135,6 +139,7 @@
       },
       error:function(){
         console.log("megn error");
+        callback("null");
       }
     });
   };
@@ -177,6 +182,7 @@
       },
       error:function(){
         console.log("gyro error");
+        callback("null");
       }
     });
   };
@@ -201,6 +207,7 @@
       },
       error:function(){
         console.log("light error");
+        callback("null");
       }
     });
   };
@@ -216,6 +223,7 @@
       },
       error:function(){
         console.log("distance error");
+        callback("null");
       }
     });
   };
