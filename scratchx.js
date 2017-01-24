@@ -89,6 +89,7 @@
         }else{
           $(document.body).append('<input type="hidden" name="'+place+'_accez" value="' + data.accez + '">');
         }
+        callback('acce success');
       },
       error:function(){
         console.log("acce error");
@@ -130,6 +131,7 @@
         }else{
           $(document.body).append('<input type="hidden" name="'+place+'_megnz" value="' + data.megnz + '">');
         }
+        callback('megny success');
       },
       error:function(){
         console.log("megn error");
@@ -171,6 +173,7 @@
         }else{
           $(document.body).append('<input type="hidden" name="'+place+'_gyroz" value="' + data.gyroz + '">');
         }
+        callback('gyro success');
       },
       error:function(){
         console.log("gyro error");
