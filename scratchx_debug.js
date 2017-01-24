@@ -30,7 +30,7 @@
       },
       error:function(){
         console.log("temp error");
-        callback("");
+        callback("null");
       }
     });
   };
