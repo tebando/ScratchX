@@ -243,7 +243,7 @@ var descriptor = {
     /* 照度 */
     ["R", "%m.menu の照度", "light", ip_key[0]],
     /* 超音波距離センサ */
-    ["R", "%m.distance_menu の超音波距離センサ", "distance", distance_menu[0]]
+    ["R", "%m.distance_menu の超音波距離センサ", "distance", "A"]
   ],
   "menus": {
      menu: ip_key,
