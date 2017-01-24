@@ -60,7 +60,7 @@ var descriptor = {
     /* CO2 */
     ["R", "%m.menu のCO2濃度", "co2", "鳴門"],
     /* 温度 */
-    ["R", "%m.menu のCO2濃度", "temperature", "鳴門"]
+    ["R", "%m.menu の温度", "temperature", "鳴門"]
   ],
   "menus": {
      menu: global_key
