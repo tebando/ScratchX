@@ -7,7 +7,7 @@
   };
 
   var ip_list = {
-          "鳴門":"192.168.0.103",
+          "A":"192.168.0.103",
           "B":"160.204.180.129",
           "C":"160.204.180.130",
           "D":"160.204.180.254"
@@ -246,11 +246,10 @@ var descriptor = {
     /* 照度 */
     ["R", "%m.menu の照度", "light", ip_key[0]],
     /* 超音波距離センサ */
-    ["R", "%m.distance_menu の超音波距離センサ", "distance", "鳴門"]
+    ["R", "%m.menu の超音波距離センサ", "distance", ip_key[0]]
   ],
   "menus": {
-     menu: ip_key,
-     distance_menu: ["A"]
+     menu: ip_key
    }
 };
 
