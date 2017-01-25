@@ -18,6 +18,28 @@
       ip_key.push(key);
   }
 
+  /* ダウンロード */
+  ext.download = function(data) {
+    var content = data.replace(/ /g,"\n");
+
+    var bom = new Uint8Array([0xEF, 0xBB, 0xBF]);
+    var downloadFileName = "scratchx.csv";
+    var blob = new Blob([bom,content], {"type":"application/x-msdownload"});
+    
+    var link = document.createElement('a');
+    link.setAttribute("download",downloadFileName);
+    link.href = URL.createObjectURL(blob);
+
+    // IE, Edge, Chrome, FireFox
+    if(window.navigator.msSaveBlob){
+      window.navigator.msSaveBlob(blob, downloadFileName); 
+      window.navigator.msSaveOrOpenBlob(blob, downloadFileName); 
+    }else{
+      var evt = document.createEvent("MouseEvents");
+      evt.initEvent("click",false,true);
+      link.dispatchEvent(evt);
+    }
+  }
 
   /* 温度 */
   ext.temp = function(place, callback) {
@@ -254,7 +276,9 @@ var descriptor = {
     /* 照度 */
     ["R", "%s の照度", "light", ""],
     /* 超音波距離センサ */
-    ["R", "%s の超音波距離センサ", "distance", ""]
+    ["R", "%s の超音波距離センサ", "distance", ""],
+    /* ダウンロード */
+    ["w", "%s をcsvダウンロード", "download", ""]
   ],
   "menus": {
      menu: ip_key
