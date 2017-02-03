@@ -10,8 +10,8 @@
 
   /* 4-Digit Display */
   ext.fdd = function(place, num, callback) {
-    place = place.replace(/\s+/g, "");
-    num = num.replace(/\s+/g, "");
+    place = place.replace(/ /g, "");
+    num = num.replace(/ /g, "");
 
     if (place > 5 && place < 0) {
         console.log('place value is infelicity');
