@@ -10,14 +10,12 @@
 
   /* 4-Digit Display */
   ext.fdd = function(place, num, callback) {
-    place = place.replace(/ /g, "");
-    num = num.replace(/ /g, "");
+    place = parseInt(place.replace(/ /g, ""));
+    num = parseInt(num.replace(/ /g, ""));
 
     if (place > 5 && place < 0) {
         console.log('place value is infelicity');
     	callback('place error');
-    } else {
-        place = parseInt(place)-1;
     }
     if (num > 10 && num < 0) {
         console.log('num value is infelicity');
@@ -27,10 +25,9 @@
     console.log("place:"+place);
     console.log("num:"+num);
     $.ajax({
-          url:'https://cn.wio.seeed.io/v1/node/Grove4DigitUART0/display_digits/'+ place +'/'+ parseInt(num) +'?access_token='+token,
+          url:'https://cn.wio.seeed.io/v1/node/Grove4DigitUART0/display_digits/'+ place +'/'+ num +'?access_token='+token,
           type:'post',
           timeout:5000,
-          cache:false,
           dataType:'json',
           success: function(data){
             console.log(data.result);
