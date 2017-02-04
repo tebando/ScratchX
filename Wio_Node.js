@@ -11,6 +11,16 @@
   /* 4-Digit Display */
   ext.fdd = function(place, num) {
 
+    var p = place.trim();
+    var n = num.trim();
+
+    if (place > 5 && place < 0) {
+        console.log('place value is infelicity');
+    }
+    if (num > 10 && num < 0) {
+        console.log('num value is infelicity');
+    }
+
     console.log("place:"+place);
     console.log("num:"+num);
     $.ajax({
