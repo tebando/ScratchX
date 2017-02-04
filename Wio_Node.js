@@ -13,6 +13,8 @@
 
     var place = place-1;
 
+    console.log(typeof place);
+    console.log(typeof num);
     $.ajax({
           url:'https://cn.wio.seeed.io/v1/node/Grove4DigitUART0/display_digits/'+ place +'/'+ num +'?access_token='+token,
           type:'POST',
