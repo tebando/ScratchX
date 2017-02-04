@@ -10,19 +10,17 @@
 
   /* 4-Digit Display */
   ext.fdd = function(place, num) {
-/*
+
     place = parseInt(place.replace(/ /g, ""));
     num = parseInt(num.replace(/ /g, ""));
 
     if (place > 5 && place < 0) {
         console.log('place value is infelicity');
-    	callback('place error');
     }
     if (num > 10 && num < 0) {
         console.log('num value is infelicity');
-    	callback('num error');
     }
-*/
+
     console.log("place:"+place);
     console.log("num:"+num);
     $.ajax({
