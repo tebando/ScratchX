@@ -11,8 +11,8 @@
   /* 4-Digit Display */
   ext.fdd = function(place, num) {
 
-    place = place.trim();
-    num = num.trim();
+    var p = place.trim();
+    var n = num.trim();
 
     if (place > 5 && place < 0) {
         console.log('place value is infelicity');
@@ -21,8 +21,8 @@
         console.log('num value is infelicity');
     }
 
-    console.log("place:"+place);
-    console.log("num:"+num);
+    console.log("place:"+p);
+    console.log("num:"+n);
     $.ajax({
           url:'https://cn.wio.seeed.io/v1/node/Grove4DigitUART0/display_digits/'+ place +'/'+ num +'?access_token='+token,
           type:'POST',
