@@ -9,7 +9,8 @@
   var token = '451daaedad456e264e5867c05cbe2beb';
 
   /* 4-Digit Display */
-  ext.fdd = function(place, num, callback) {
+  ext.fdd = function(place, num) {
+/*
     place = parseInt(place.replace(/ /g, ""));
     num = parseInt(num.replace(/ /g, ""));
 
@@ -21,21 +22,19 @@
         console.log('num value is infelicity');
     	callback('num error');
     }
-
+*/
     console.log("place:"+place);
     console.log("num:"+num);
     $.ajax({
           url:'https://cn.wio.seeed.io/v1/node/Grove4DigitUART0/display_digits/'+ place +'/'+ num +'?access_token='+token,
-          type:'post',
+          type:'POST',
           timeout:5000,
           dataType:'json',
           success: function(data){
             console.log(data.result);
-            callback(data.result);
           },
           error : function(){
             console.log('error');
-            callback('error');
           }
     });
   };
@@ -43,7 +42,7 @@
 var descriptor = {
   "blocks": [
     /* 4-Digit Display */
-    ["w", "%n 番目に%n を表示する", "fdd", "",""]
+    [" ", "%n 番目に%n を表示する", "fdd", "",""]
   ],
   "menus": {}
 };
