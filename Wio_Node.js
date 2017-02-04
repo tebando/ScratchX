@@ -11,8 +11,8 @@
   /* 4-Digit Display */
   ext.fdd = function(place, num) {
 
-    var p = place.trim();
-    var n = num.trim();
+    var place = place.trim();
+    var num = num.trim();
 
     if (place > 5 && place < 0) {
         console.log('place value is infelicity');
