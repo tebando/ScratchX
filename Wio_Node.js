@@ -11,15 +11,7 @@
   /* 4-Digit Display */
   ext.fdd = function(place, num) {
 
-    var place = Number(place)-1;
-    var num = Number(num);
-
-    if (place > 5 && place < 0) {
-        console.log('place value is infelicity');
-    }
-    if (num > 10 && num < 0) {
-        console.log('num value is infelicity');
-    }
+    var place = place-1;
 
     console.log("place:"+place);
     console.log("num:"+num);
