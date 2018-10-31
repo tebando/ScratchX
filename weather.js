@@ -7,7 +7,7 @@
 
   ext.get_weather = function(callback) {
     $.ajax({
-      url: 'http://api.openweathermap.org/data/2.5/weather?q=Kashiwa,%20JP&units=imperial&APPID=fa4bc3cd05fcedff03fcec2db6bb2a4f',
+      url: 'http://api.openweathermap.org/data/2.5/weather?q=Tokushima,%20JP&units=imperial&APPID=fa4bc3cd05fcedff03fcec2db6bb2a4f',
       dataType: 'jsonp',
       success: function(data) {
         if (data.cod == 200) {
