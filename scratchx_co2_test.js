@@ -37,7 +37,7 @@
   };
 
   /* Temp */
-  ext.get_sensor_temp = function(place, callback) {
+  ext.get_sensor_temp = function(callback) {
     $.ajax({
             url: 'http://www.naruto-u.ac.jp/facultystaff/naosone/sensors/temp.json',
             dataType:'json',
