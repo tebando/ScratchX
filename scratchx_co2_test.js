@@ -55,7 +55,7 @@
 var descriptor = {
   "blocks": [
     /* CO2 */
-    ["R", "%m.menu のCO2濃度", "co2", "naruto"]
+    ["R", "%m.menu のCO2濃度", "co2", "naruto"],
     ["R", "温度", "get_sensor_temp"]
   ],
   "menus": {
