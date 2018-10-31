@@ -36,16 +36,33 @@
     });
   };
 
+  /* Temp */
+  ext.get_sensor_temp = function(place, callback) {
+    $.ajax({
+            url: 'http://www.naruto-u.ac.jp/facultystaff/naosone/sensors/temp.json',
+            dataType:'json',
+            timeout:5000,
+            success: function(data){
+              if (data.cod == 200) {
+                callback(data.temp);
+              } else {
+                callback();
+              }
+            }
+    });
+  };
+  
 var descriptor = {
   "blocks": [
     /* CO2 */
     ["R", "%m.menu のCO2濃度", "co2", "naruto"]
+    ["R", "温度", "get_sensor_temp"]
   ],
   "menus": {
      menu: global_key
    }
 };
 
-ScratchExtensions.register("ブロック群のタイトル", descriptor, ext);
+ScratchExtensions.register("温度，CO2センサー拡張", descriptor, ext);
 
 })({});
