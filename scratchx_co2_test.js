@@ -42,12 +42,12 @@
             url: 'http://www.naruto-u.ac.jp/facultystaff/naosone/sensors/temp.json',
             dataType:'json',
             timeout:5000,
-            success: function(data){
-              if (data.cod == 200) {
+            success: function(data) {
                 callback(data.temp);
-              } else {
-                callback();
-              }
+            },
+            error : function(){
+            },
+            complete: function(data) {
             }
     });
   };
