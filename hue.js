@@ -1,4 +1,4 @@
-function(ext){
+(function(ext){
   ext._shutdown = function() {};
 
   ext._getStatus = function() {
