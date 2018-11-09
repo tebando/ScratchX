@@ -26,7 +26,7 @@
 
     console.log("off:");
     $.ajax({
-          url:'http://160.204.91.185:1880/setHue1?off=true',
+          url:'https://160.204.91.185:1880/setHue1?off=true',
           type:'POST',
           timeout:5000,
           dataType:'json',
