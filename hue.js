@@ -45,9 +45,9 @@ var descriptor = {
     [" ", "LED1を点灯する", "onHue1", "",""],
     [" ", "LED1を消灯する", "offHue1", "",""],
   ],
-  "menus": {
-     display:["表示する","表示しない"]
-  }
+//  "menus": {
+//     display:["表示する","表示しない"]
+//  }
 };
 
 ScratchExtensions.register("Hueの制御", descriptor, ext);
