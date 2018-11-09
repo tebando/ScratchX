@@ -13,7 +13,7 @@
           url:'http://160.204.91.185:1880/setHue1?on=true',
           type:'GET',
           timeout:5000,
-          dataType:'json',
+          dataType:'jsonp',
           success: function(data){
             console.log(data.result);
           },
@@ -29,7 +29,7 @@
           url:'https://160.204.91.185:1880/setHue1?off=true',
           type:'GET',
           timeout:5000,
-          dataType:'json',
+          dataType:'jsonp',
           success: function(data){
             console.log(data.result);
           },
