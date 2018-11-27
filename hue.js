@@ -9,7 +9,7 @@
   ext.onHue1 = function() {
     console.log("on:");
     $.ajax({
-          url:'http://160.204.91.185:1880/setHue1?on=true',
+          url:'http://192.168.234.58:1880/setHue1?on=true',
           type:'GET',
           timeout:5000,
           dataType:'text',
@@ -25,7 +25,7 @@
   ext.colorHue1 = function(color) {
     console.log("oncolor:");
     $.ajax({
-          url:'http://160.204.91.185:1880/setHue1?on=true&hue='+color,
+          url:'http://192.168.234.58:1880/setHue1?on=true&hue='+color,
           type:'GET',
           timeout:5000,
           dataType:'text',
@@ -42,7 +42,7 @@
   ext.offHue1 = function() {
     console.log("off:");
     $.ajax({
-          url:'http://160.204.91.185:1880/setHue1?off=true',
+          url:'http://192.168.234.58:1880/setHue1?off=true',
           type:'GET',
           timeout:5000,
           dataType:'text',
@@ -58,7 +58,7 @@
   ext.onHue2 = function() {
     console.log("on:");
     $.ajax({
-          url:'http://160.204.91.185:1880/setHue2?on=true',
+          url:'http://192.168.234.58:1880/setHue2?on=true',
           type:'GET',
           timeout:5000,
           dataType:'text',
@@ -74,7 +74,7 @@
   ext.colorHue2 = function(color) {
     console.log("oncolor:");
     $.ajax({
-          url:'http://160.204.91.185:1880/setHue2?on=true&hue='+color,
+          url:'http://192.168.234.58:1880/setHue2?on=true&hue='+color,
           type:'GET',
           timeout:5000,
           dataType:'text',
@@ -90,7 +90,7 @@
   ext.offHue2 = function() {
     console.log("off:");
     $.ajax({
-          url:'http://160.204.91.185:1880/setHue2?off=true',
+          url:'http://192.168.234.58:1880/setHue2?off=true',
           type:'GET',
           timeout:5000,
           dataType:'text',
@@ -106,7 +106,7 @@
     ext.onHue3 = function() {
     console.log("on:");
     $.ajax({
-          url:'http://160.204.91.185:1880/setHue3?on=true',
+          url:'http://192.168.234.58:1880/setHue3?on=true',
           type:'GET',
           timeout:5000,
           dataType:'text',
@@ -122,7 +122,7 @@
   ext.colorHue3 = function(color) {
     console.log("oncolor:");
     $.ajax({
-          url:'http://160.204.91.185:1880/setHue3?on=true&hue='+color,
+          url:'http://192.168.234.58:1880/setHue3?on=true&hue='+color,
           type:'GET',
           timeout:5000,
           dataType:'text',
@@ -139,7 +139,7 @@
   ext.offHue3 = function() {
     console.log("off:");
     $.ajax({
-          url:'http://160.204.91.185:1880/setHue3?off=true',
+          url:'http://192.168.234.58:1880/setHue3?off=true',
           type:'GET',
           timeout:5000,
           dataType:'text',
