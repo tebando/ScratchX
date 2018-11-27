@@ -9,7 +9,7 @@
   ext.onFan = function() {
     console.log("on:");
     $.ajax({
-          url:'http://160.204.91.185:1880/onFan',
+          url:'http://192.168.234.58:1880/onFan',
           type:'GET',
           timeout:5000,
           dataType:'text',
@@ -25,7 +25,7 @@
   ext.offFan = function() {
     console.log("off:");
     $.ajax({
-          url:'http://160.204.91.185:1880/offFan',
+          url:'http://192.168.234.58:1880/offFan',
           type:'GET',
           timeout:5000,
           dataType:'text',
@@ -41,7 +41,7 @@
   ext.onLight1 = function() {
     console.log("on:");
     $.ajax({
-          url:'http://160.204.91.185:1880/onLight1',
+          url:'http://192.168.234.58:1880/onLight1',
           type:'GET',
           timeout:5000,
           dataType:'text',
@@ -57,7 +57,7 @@
   ext.offLight1 = function() {
     console.log("off:");
     $.ajax({
-          url:'http://160.204.91.185:1880/offLight1',
+          url:'http://192.168.234.58:1880/offLight1',
           type:'GET',
           timeout:5000,
           dataType:'text',
@@ -73,7 +73,7 @@
   ext.onLight2 = function() {
     console.log("on:");
     $.ajax({
-          url:'http://160.204.91.185:1880/onLight2',
+          url:'http://192.168.234.58:1880/onLight2',
           type:'GET',
           timeout:5000,
           dataType:'text',
@@ -89,7 +89,7 @@
   ext.offLight2 = function() {
     console.log("off:");
     $.ajax({
-          url:'http://160.204.91.185:1880/offLight2',
+          url:'http://192.168.234.58:1880/offLight2',
           type:'GET',
           timeout:5000,
           dataType:'text',
