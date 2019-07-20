@@ -2,28 +2,28 @@
   var hostname = '';
   var hub = '';
   var port = 0;
- var preset = {
-'Seven Color Cross Fade':  	37, 
-'Red Gradual Change':      	38, 
-'Green Gradual Change':    	39, 
-'Blue Gradual Change':     	40, 
-'Yellow Gradual Change':   	41, 
-'Cyan Gradual Change':     	42, 
-'Purple Gradual Change':   	43, 
-'White Gradual Change':    	44, 
-'Red Green Cross Fade':    	45, 
-'Red Blue Cross Fade':     	46, 
-'Green Blue Cross Fade':   	47, 
-'Seven Color Strobe Flash':	48, 
-'Red Strobe Flash':        	49, 
-'Green Strobe Flash':      	50, 
-'Blue Strobe Flash':       	51, 
-'Yellow Strobe Flash':     	52, 
-'Cyan Strobe Flash':       	53, 
-'Purple Strobe Flash':     	54, 
-'White Strobe Flash':      	55, 
-'Seven Color Jumping':     	56 
-};
+  var preset = {
+	'Seven Color Cross Fade':  	37, 
+	'Red Gradual Change':      	38, 
+	'Green Gradual Change':    	39, 
+	'Blue Gradual Change':     	40, 
+	'Yellow Gradual Change':   	41, 
+	'Cyan Gradual Change':     	42, 
+	'Purple Gradual Change':   	43, 
+	'White Gradual Change':    	44, 
+	'Red Green Cross Fade':    	45, 
+	'Red Blue Cross Fade':     	46, 
+	'Green Blue Cross Fade':   	47, 
+	'Seven Color Strobe Flash':	48, 
+	'Red Strobe Flash':        	49, 
+	'Green Strobe Flash':      	50, 
+	'Blue Strobe Flash':       	51, 
+	'Yellow Strobe Flash':     	52, 
+	'Cyan Strobe Flash':       	53, 
+	'Purple Strobe Flash':     	54, 
+	'White Strobe Flash':      	55, 
+	'Seven Color Jumping':     	56 
+  };
 
   ext._shutdown = function() {};
 
@@ -134,6 +134,37 @@
     });
   };
 
+  /* Distance */
+  ext.get_distance = function(callback) {
+    $.ajax({
+            url:'http://' + hostname + ':1880/distance.json',
+            dataType:'json',
+            timeout:5000,
+            success: function(data) {
+                callback(data.distance);
+            },
+            error : function(){
+            },
+            complete: function(data) {
+            }
+    });
+  };
+
+  /* Shot */
+  ext.shot = function(callback) {
+    $.ajax({
+            url:'http://' + hostname + ':1880/shot',
+            dataType:'text',
+            timeout:5000,
+            success: function(data) {
+            	console.log(data.result);
+            },
+            error : function(){
+		console.log('Error');
+            }
+    });
+  };
+
 
 var strings = {
 	ON:	'on',
@@ -148,8 +179,10 @@ var descriptor = {
     [" ", "wifiBulb %s を %m.power にする", "bulbCtrl", 'ip', 'power',""],
     [" ", "wifiBulb %s の色を %n, %n, %n にする", "bulbColor", 'ip', 'r','g','b',""],
     [" ", "wifiBulb %s の色を %m.pattern にspeedを %n にする", "bulbPreset", 'ip', 'pattern', 'speed', ""],
+    [" ", "カメラ撮影する", "shot", '', ""],
     ["R", "センサーのCO2濃度", "get_co2", ""],
-    ["R", "センサーの温度", "get_temp",""]
+    ["R", "センサーの温度", "get_temp",""],
+    ["R", "距離センサーの値", "get_distance",""]
   ],
 //  "menus": {
 //     display:["表示する","表示しない"]
