@@ -1,0 +1,490 @@
+[
+    {
+        "id": "85eecc6a.0a33b",
+        "type": "exec",
+        "z": "993347be.441788",
+        "command": "cat /dev/shm/sensortag.tsv",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "light_cons",
+        "x": 284,
+        "y": 595.0000534057617,
+        "wires": [
+            [
+                "78363505.865a2c"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "78363505.865a2c",
+        "type": "function",
+        "z": "993347be.441788",
+        "name": "light_func",
+        "func": "msg.headers = {\n \"Access-Control-Allow-Origin\":\"*\",\n \"Access-Control-Allow-Method\":\"GET,POST,PUT,DELETE,OPTIONS\",\n \"Access-Control-Allow-Headers\":\"Origin, X-Requested-With, Content-Type, Accept\"\n}\n\nvar light = String((msg.payload.split(\"\\t\")[6]));\nvar obj = {\"light\":light};\nmsg.payload = JSON.stringify(obj);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 443,
+        "y": 584.0000228881836,
+        "wires": [
+            [
+                "f42bdc94.dee2e"
+            ]
+        ]
+    },
+    {
+        "id": "3997892f.825f36",
+        "type": "http in",
+        "z": "993347be.441788",
+        "name": "light_req",
+        "url": "/light.json",
+        "method": "get",
+        "swaggerDoc": "",
+        "x": 106,
+        "y": 595.0000228881836,
+        "wires": [
+            [
+                "85eecc6a.0a33b"
+            ]
+        ]
+    },
+    {
+        "id": "f42bdc94.dee2e",
+        "type": "http response",
+        "z": "993347be.441788",
+        "name": "",
+        "x": 592,
+        "y": 583,
+        "wires": []
+    },
+    {
+        "id": "763dc951.535d58",
+        "type": "exec",
+        "z": "993347be.441788",
+        "command": "cat /dev/shm/sensortag.tsv",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "temp_cons",
+        "x": 274.6666564941406,
+        "y": 74,
+        "wires": [
+            [
+                "20e65f4a.350ef"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "20e65f4a.350ef",
+        "type": "function",
+        "z": "993347be.441788",
+        "name": "temp_func",
+        "func": "msg.headers = {\n \"Access-Control-Allow-Origin\":\"*\",\n \"Access-Control-Allow-Method\":\"GET,POST,PUT,DELETE,OPTIONS\",\n \"Access-Control-Allow-Headers\":\"Origin, X-Requested-With, Content-Type, Accept\"\n}\n\nvar temp = String((msg.payload.split(\"\\t\")[0]));\ntemp = temp.replace('(','').replace(')','').replace(' ','');\ntemp = temp.split(',')[0];\nvar obj = {\"temp\":temp};\nmsg.payload = JSON.stringify(obj);\n\nreturn msg;",
+        "outputs": "1",
+        "noerr": 0,
+        "x": 437.6666564941406,
+        "y": 60,
+        "wires": [
+            [
+                "582eda94.c33124"
+            ]
+        ]
+    },
+    {
+        "id": "ba259423.69d688",
+        "type": "http in",
+        "z": "993347be.441788",
+        "name": "temp_req",
+        "url": "/temp.json",
+        "method": "get",
+        "swaggerDoc": "",
+        "x": 94.66665649414062,
+        "y": 75,
+        "wires": [
+            [
+                "763dc951.535d58"
+            ]
+        ]
+    },
+    {
+        "id": "582eda94.c33124",
+        "type": "http response",
+        "z": "993347be.441788",
+        "name": "",
+        "x": 592.6666870117188,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "d177c651.a06558",
+        "type": "exec",
+        "z": "993347be.441788",
+        "command": "cat /dev/shm/sensortag.tsv",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "humi_cons",
+        "x": 275.6666564941406,
+        "y": 167.66666412353516,
+        "wires": [
+            [
+                "3af00d7a.c3bdb2"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "3af00d7a.c3bdb2",
+        "type": "function",
+        "z": "993347be.441788",
+        "name": "humi_func",
+        "func": "msg.headers = {\n \"Access-Control-Allow-Origin\":\"*\",\n \"Access-Control-Allow-Method\":\"GET,POST,PUT,DELETE,OPTIONS\",\n \"Access-Control-Allow-Headers\":\"Origin, X-Requested-With, Content-Type, Accept\"\n}\n\nvar humi = String((msg.payload.split(\"\\t\")[1]));\nhumi = humi.replace('(','').replace(')','').replace(' ','');\nhumi = humi.split(',')[1];\nvar obj = {\"humi\":humi};\nmsg.payload = JSON.stringify(obj);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 438.6666564941406,
+        "y": 153.66666412353516,
+        "wires": [
+            [
+                "9ff82a47.af9448"
+            ]
+        ]
+    },
+    {
+        "id": "e5fd296f.8a41c8",
+        "type": "http in",
+        "z": "993347be.441788",
+        "name": "humi_req",
+        "url": "/humi.json",
+        "method": "get",
+        "swaggerDoc": "",
+        "x": 95.66665649414062,
+        "y": 168.66666412353516,
+        "wires": [
+            [
+                "d177c651.a06558"
+            ]
+        ]
+    },
+    {
+        "id": "9ff82a47.af9448",
+        "type": "http response",
+        "z": "993347be.441788",
+        "name": "",
+        "x": 598.6666870117188,
+        "y": 152.66665649414062,
+        "wires": []
+    },
+    {
+        "id": "25cad8b0.5f0848",
+        "type": "exec",
+        "z": "993347be.441788",
+        "command": "cat /dev/shm/sensortag.tsv",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "baro_cons",
+        "x": 260.6666564941406,
+        "y": 251.66665649414062,
+        "wires": [
+            [
+                "60a1a7c6.cd71f8"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "60a1a7c6.cd71f8",
+        "type": "function",
+        "z": "993347be.441788",
+        "name": "baro_func",
+        "func": "msg.headers = {\n \"Access-Control-Allow-Origin\":\"*\",\n \"Access-Control-Allow-Method\":\"GET,POST,PUT,DELETE,OPTIONS\",\n \"Access-Control-Allow-Headers\":\"Origin, X-Requested-With, Content-Type, Accept\"\n}\n\nvar baro = String((msg.payload.split(\"\\t\")[2]));\nbaro = baro.replace('(','').replace(')','').replace(' ','');\nbaro = baro.split(',')[1];\nvar obj = {\"baro\":baro};\nmsg.payload = JSON.stringify(obj);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 437.6666564941406,
+        "y": 235.66665649414062,
+        "wires": [
+            [
+                "b082a0c5.aa869"
+            ]
+        ]
+    },
+    {
+        "id": "6f411321.46feac",
+        "type": "http in",
+        "z": "993347be.441788",
+        "name": "baro_req",
+        "url": "/baro.json",
+        "method": "get",
+        "swaggerDoc": "",
+        "x": 96.66665649414062,
+        "y": 250.66666412353516,
+        "wires": [
+            [
+                "25cad8b0.5f0848"
+            ]
+        ]
+    },
+    {
+        "id": "b082a0c5.aa869",
+        "type": "http response",
+        "z": "993347be.441788",
+        "name": "",
+        "x": 594.6666870117188,
+        "y": 235.66665649414062,
+        "wires": []
+    },
+    {
+        "id": "ebfa5f68.44f11",
+        "type": "exec",
+        "z": "993347be.441788",
+        "command": "cat /dev/shm/sensortag.tsv",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "acce_cons",
+        "x": 261.6666564941406,
+        "y": 334.6666564941406,
+        "wires": [
+            [
+                "dd9b4844.e2bbc8"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "dd9b4844.e2bbc8",
+        "type": "function",
+        "z": "993347be.441788",
+        "name": "acce_func",
+        "func": "msg.headers = {\n \"Access-Control-Allow-Origin\":\"*\",\n \"Access-Control-Allow-Method\":\"GET,POST,PUT,DELETE,OPTIONS\",\n \"Access-Control-Allow-Headers\":\"Origin, X-Requested-With, Content-Type, Accept\"\n}\n\nvar acce = String((msg.payload.split(\"\\t\")[3]));\nacce = acce.replace('(','').replace(')','').replace(/ /g,'');\nacce = acce.split(',');\nvar obj = {\"accex\":acce[0],\"accey\":acce[1],\"accez\":acce[2]};\nmsg.payload = JSON.stringify(obj);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 436.66668701171875,
+        "y": 319.6666564941406,
+        "wires": [
+            [
+                "12cfd382.0aa1ac"
+            ]
+        ]
+    },
+    {
+        "id": "da5ef165.a008",
+        "type": "http in",
+        "z": "993347be.441788",
+        "name": "acce_req",
+        "url": "/acce.json",
+        "method": "get",
+        "swaggerDoc": "",
+        "x": 104.66665649414062,
+        "y": 334.66666412353516,
+        "wires": [
+            [
+                "ebfa5f68.44f11"
+            ]
+        ]
+    },
+    {
+        "id": "12cfd382.0aa1ac",
+        "type": "http response",
+        "z": "993347be.441788",
+        "name": "",
+        "x": 592.6666870117188,
+        "y": 319.6666564941406,
+        "wires": []
+    },
+    {
+        "id": "9e5312e6.d36c5",
+        "type": "exec",
+        "z": "993347be.441788",
+        "command": "cat /dev/shm/sensortag.tsv",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "megn_cons",
+        "x": 258.6666564941406,
+        "y": 412.0000305175781,
+        "wires": [
+            [
+                "945d11f3.d2eec"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "945d11f3.d2eec",
+        "type": "function",
+        "z": "993347be.441788",
+        "name": "megn_func",
+        "func": "msg.headers = {\n \"Access-Control-Allow-Origin\":\"*\",\n \"Access-Control-Allow-Method\":\"GET,POST,PUT,DELETE,OPTIONS\",\n \"Access-Control-Allow-Headers\":\"Origin, X-Requested-With, Content-Type, Accept\"\n}\n\nvar megn = String((msg.payload.split(\"\\t\")[4]));\nmegn = megn.replace('(','').replace(')','').replace(/ /g,'');\nmegn = megn.split(',');\nvar obj = {\"megnx\":megn[0],\"megny\":megn[1],\"megnz\":megn[2]};\nmsg.payload = JSON.stringify(obj);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 430.66668701171875,
+        "y": 396.0000305175781,
+        "wires": [
+            [
+                "8179ca88.c6a998"
+            ]
+        ]
+    },
+    {
+        "id": "8c9b8848.539d68",
+        "type": "http in",
+        "z": "993347be.441788",
+        "name": "megn_req",
+        "url": "/megn.json",
+        "method": "get",
+        "swaggerDoc": "",
+        "x": 100.66665649414062,
+        "y": 413.00003814697266,
+        "wires": [
+            [
+                "9e5312e6.d36c5"
+            ]
+        ]
+    },
+    {
+        "id": "8179ca88.c6a998",
+        "type": "http response",
+        "z": "993347be.441788",
+        "name": "",
+        "x": 588.6666870117188,
+        "y": 395.0000305175781,
+        "wires": []
+    },
+    {
+        "id": "b488c07d.0045f",
+        "type": "exec",
+        "z": "993347be.441788",
+        "command": "cat /dev/shm/sensortag.tsv",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "gyro_cons",
+        "x": 257.6666564941406,
+        "y": 503.6666564941406,
+        "wires": [
+            [
+                "b37062f7.1cc61"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b37062f7.1cc61",
+        "type": "function",
+        "z": "993347be.441788",
+        "name": "gyro_func",
+        "func": "msg.headers = {\n \"Access-Control-Allow-Origin\":\"*\",\n \"Access-Control-Allow-Method\":\"GET,POST,PUT,DELETE,OPTIONS\",\n \"Access-Control-Allow-Headers\":\"Origin, X-Requested-With, Content-Type, Accept\"\n}\n\nvar gyro = String((msg.payload.split(\"\\t\")[5]));\ngyro = gyro.replace('(','').replace(')','').replace(/ /g,'');\ngyro = gyro.split(',');\nvar obj = {\"gyrox\":gyro[0],\"gyroy\":gyro[1],\"gyroz\":gyro[2]};\nmsg.payload = JSON.stringify(obj);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 422.6666564941406,
+        "y": 488.6666259765625,
+        "wires": [
+            [
+                "b662de5f.78d73"
+            ]
+        ]
+    },
+    {
+        "id": "83e7a116.98287",
+        "type": "http in",
+        "z": "993347be.441788",
+        "name": "gyro_req",
+        "url": "/gyro.json",
+        "method": "get",
+        "swaggerDoc": "",
+        "x": 105.66665649414062,
+        "y": 503.6666488647461,
+        "wires": [
+            [
+                "b488c07d.0045f"
+            ]
+        ]
+    },
+    {
+        "id": "b662de5f.78d73",
+        "type": "http response",
+        "z": "993347be.441788",
+        "name": "",
+        "x": 589.6666870117188,
+        "y": 487.6666564941406,
+        "wires": []
+    },
+    {
+        "id": "7c50a3ab.9e4bfc",
+        "type": "exec",
+        "z": "993347be.441788",
+        "command": "python /home/pi/work/HC-SR04/usonic.py",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "distance_cons",
+        "x": 293,
+        "y": 687,
+        "wires": [
+            [
+                "4df2f4ce.495d5c"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "4df2f4ce.495d5c",
+        "type": "function",
+        "z": "993347be.441788",
+        "name": "distance_func",
+        "func": "msg.headers = {\n \"Access-Control-Allow-Origin\":\"*\",\n \"Access-Control-Allow-Method\":\"GET,POST,PUT,DELETE,OPTIONS\",\n \"Access-Control-Allow-Headers\":\"Origin, X-Requested-With, Content-Type, Accept\"\n}\n\nvar distance = String(msg.payload);\ndistance = distance.replace(\"\\n\",'')\nvar obj = {\"distance\":distance};\nmsg.payload = JSON.stringify(obj);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 478,
+        "y": 675,
+        "wires": [
+            [
+                "13176299.e7764d"
+            ]
+        ]
+    },
+    {
+        "id": "b1b8b91a.4f5358",
+        "type": "http in",
+        "z": "993347be.441788",
+        "name": "distance_req",
+        "url": "/distance.json",
+        "method": "get",
+        "swaggerDoc": "",
+        "x": 115,
+        "y": 686.9999694824219,
+        "wires": [
+            [
+                "7c50a3ab.9e4bfc"
+            ]
+        ]
+    },
+    {
+        "id": "13176299.e7764d",
+        "type": "http response",
+        "z": "993347be.441788",
+        "name": "",
+        "x": 631,
+        "y": 674,
+        "wires": []
+    }
+]
