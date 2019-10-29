@@ -37,7 +37,7 @@
   ext.usbHubCtrl = function(hub, port, power) {
     console.log("on:");
     $.ajax({
-          url:'http://' + hostname + ':1880/usbhub?hub=' + hub + '&port=' + port + '&power=' + power,
+          url:'https://' + hostname + '/usbhub?hub=' + hub + '&port=' + port + '&power=' + power,
           type:'GET',
           timeout:5000,
           dataType:'text',
@@ -53,7 +53,7 @@
   ext.bulbCtrl = function(ip, power) {
     console.log("on:");
     $.ajax({
-          url:'http://' + hostname + ':1880/bulb?ip=' + ip + '&power=' + power,
+          url:'https://' + hostname + '/bulb?ip=' + ip + '&power=' + power,
           type:'GET',
           timeout:5000,
           dataType:'text',
@@ -69,7 +69,7 @@
   ext.bulbColor= function(ip, r, g, b) {
     console.log("on:");
     $.ajax({
-          url:'http://' + hostname + ':1880/bulb?ip=' + ip + '&color=' + r + ',' + g + ',' + b,
+          url:'https://' + hostname + '/bulb?ip=' + ip + '&color=' + r + ',' + g + ',' + b,
           type:'GET',
           timeout:5000,
           dataType:'text',
@@ -86,7 +86,7 @@
     console.log("on:",ip,pattern,preset[pattern],speed);
 	pattern = preset[pattern];  
     $.ajax({
-          url:'http://' + hostname + ':1880/bulb?ip=' + ip + '&preset=' +  pattern + '&speed=' + speed,
+          url:'https://' + hostname + '/bulb?ip=' + ip + '&preset=' +  pattern + '&speed=' + speed,
           type:'GET',
           timeout:5000,
           dataType:'text',
@@ -102,7 +102,7 @@
   /* CO2 */
   ext.get_co2 = function(callback) {
     $.ajax({
-            url:'http://' + hostname + ':1880/co2.json',
+            url:'https://' + hostname + '/co2.json',
             dataType:'json',
             timeout:5000,
             success: function(data){
@@ -121,7 +121,7 @@
   /* Temp */
   ext.get_temp= function(callback) {
     $.ajax({
-            url:'http://' + hostname + ':1880/temp.json',
+            url:'https://' + hostname + '/temp.json',
             dataType:'json',
             timeout:5000,
             success: function(data) {
@@ -137,7 +137,7 @@
   /* Distance */
   ext.get_distance = function(callback) {
     $.ajax({
-            url:'http://' + hostname + ':1880/distance.json',
+            url:'https://' + hostname + '/distance.json',
             dataType:'json',
             timeout:5000,
             success: function(data) {
@@ -153,7 +153,7 @@
   /* Shot */
   ext.shot = function(callback) {
     $.ajax({
-            url:'http://' + hostname + ':1880/shot',
+            url:'https://' + hostname + '/shot',
             dataType:'text',
             timeout:5000,
             success: function(data) {
