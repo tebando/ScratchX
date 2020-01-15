@@ -181,6 +181,7 @@ var descriptor = {
     [" ", "wifiBulb %s の色を %m.pattern にspeedを %n にする", "bulbPreset", 'ip', 'pattern', 'speed', ""],
     [" ", "カメラ撮影する", "shot", '', ""],
     ["R", "センサーのCO2濃度", "get_co2", ""],
+    ["R", "センサーの照度センサ", "get_light", ""],
     ["R", "センサーの温度", "get_temp",""],
     ["R", "距離センサーの値", "get_distance",""]
   ],
